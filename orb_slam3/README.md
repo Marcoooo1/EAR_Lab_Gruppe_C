@@ -53,3 +53,27 @@ Dateien in `results/fr1_xyz/`:
 evo_ape tum <groundtruth.txt> KeyFrameTrajectory.txt -va --plot_mode xyz --save_plot ape_plot.pdf
 evo_traj tum KeyFrameTrajectory.txt --ref="<groundtruth.txt>" --plot_mode xyz --save_plot trajectory_overlay.pdf
 ```
+
+## Ergebnisse: Sequenz fr1_desk
+
+Längere, komplexere Sequenz mit Rückkehr zum Ausgangspunkt (Loop Closure relevant), im Gegensatz zu fr1_xyz.
+
+| Metrik | ATE | RPE |
+| --- | --- | --- |
+| RMSE | 0.0192 m | 0.0173 m |
+| Mean | 0.0163 m | 0.0138 m |
+| Median | 0.0129 m | 0.0107 m |
+| Std | 0.0101 m | 0.0105 m |
+| Max | 0.0496 m | 0.0709 m |
+| Min | 0.0035 m | 0.0028 m |
+
+Dateien in `results/fr1_desk/`: `CameraTrajectory.txt`, `KeyFrameTrajectory.txt`, `ape_plot.pdf`, `rpe_plot.pdf`, `trajectory_overlay.pdf`.
+
+## Vergleich der beiden Sequenzen
+
+| Sequenz | ATE RMSE | RPE RMSE | Keyframes | Pfadlänge |
+| --- | --- | --- | --- | --- |
+| fr1_xyz | 0.0124 m | 0.0148 m | 61 | 7.0 m |
+| fr1_desk | 0.0192 m | 0.0173 m | 121 | 9.3 m |
+
+Beobachtung: trotz Loop Closure liegt der Fehler bei fr1_desk höher als bei fr1_xyz, vermutlich wegen der längeren, komplexeren Kamerabewegung und der größeren Anzahl an Keyframes. Für die Diskussion im Paper relevant: ob die Loop-Closure-Korrektur den zusätzlichen Drift durch die komplexere Trajektorie ausgleichen kann oder nicht.
