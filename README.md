@@ -1,1 +1,0 @@
-# EAR_Lab_Gruppe_C
